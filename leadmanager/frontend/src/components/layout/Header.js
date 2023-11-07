@@ -2,7 +2,7 @@ import React, {Component} from "react";
 export class Header extends Component{
    render(){
        return (
-           <nav className="navbar navbar-expand-sm navbar-light bg-light-500">
+           <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
                <div className="container-fluid">
                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                            data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"

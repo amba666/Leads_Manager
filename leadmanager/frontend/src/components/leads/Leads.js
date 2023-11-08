@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getLeads } from "../../actions/leads";
+import { getLeads, deleteLeads } from "../../actions/leads";
 
 
 export  class Leads extends Component{
@@ -16,7 +16,7 @@ export  class Leads extends Component{
     render(){
         return(
             <Fragment>
-                <h2>Leads</h2>
+               <h2 className="font-weight-bold">Leads</h2>
                 <table className="table table-striped">
                     <thead>
                         <tr>
@@ -34,7 +34,7 @@ export  class Leads extends Component{
                             <td>{lead.name}</td>
                             <td>{lead.email}</td>
                             <td>{lead.message}</td>
-                            <td><button className="btn btn-danger btn-sm">
+                            <td><button onClick={this.props.deleteLeads.bind(this.lead.id)} className="btn btn-danger btn-sm">
                                 Delete</button>
                             </td>
 
@@ -52,5 +52,5 @@ export  class Leads extends Component{
 const mapStateToProps = state => ({
     leads: state.leads.leads
 });
-export default connect(mapStateToProps, { getLeads })(Leads);
+export default connect(mapStateToProps, { getLeads, deleteLeads })(Leads);
 

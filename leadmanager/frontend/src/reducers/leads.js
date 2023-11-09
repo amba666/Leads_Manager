@@ -15,8 +15,8 @@ export default function (state = initialState, action){
      case DELETE_LEAD:
          return {
              ...state,
-             leads: state.leads.filter(lead=> lead.id !== action.payload)
-         }
+             leads: state.leads.filter(lead => lead.id !== action.payload)
+         };
      default:
          return state;
  }

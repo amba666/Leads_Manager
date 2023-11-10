@@ -28,3 +28,15 @@ export  const deleteLead = (id) =>  dispatch =>  {
      .catch(err=> console.log(err));
 };
 
+export  const addLead = (lead) =>  dispatch =>  {
+ axios
+     .post("/api/leads/", lead)
+     .then(res =>{
+         dispatch({
+             type:ADD_LEAD,
+             payload: res.data
+         });
+
+     })
+     .catch(err=> console.log(err));
+};
